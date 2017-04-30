@@ -1,0 +1,20 @@
+i,j = 0,0
+size1 = input("Enter number of processes: ")
+processes = [[0 for j in range(4)]for i in range(int(size1))]
+
+for i in range(int(size1)):
+	processes[i][0] = input("Enter Process ID: ")
+	print("Enter Arrival time of ",processes[i][0],' : ')
+	processes[i][1] = input()
+	print("Enter Burst time of ",processes[i][0],' : ')
+	processes[i][2] = input()
+	print("Enter Priority of ",processes[i][0],' : ')
+	processes[i][3] = input()
+
+processes.sort(key = lambda processes:int(processes[3]))
+processes.sort(key = lambda processes:int(processes[1]))
+
+import time
+for i in range(int(size1)):
+	print(processes[i][0]," processing & Arrival Time = ",processes[i][1]," & Burst Time = ",processes[i][2]," & Priority = ",processes[i][3)
+	time.sleep(int(processes[i][2]))
